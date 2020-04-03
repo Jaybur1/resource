@@ -7,17 +7,17 @@ const PORT  = 3000;
 
 // ? Home page
 router.get("/",function(req, res) {
-  res.sendFile(path.join(__dirname + "/client/dist" + "/index.html"));
+  res.sendFile(path.join(__dirname + "/client/views" + "/index.html"));
 });
 
 // ? About page
 router.get("/about",function(req, res) {
-  res.sendFile(path.join(__dirname  + "/client/dist" + "/about.html"));
+  res.sendFile(path.join(__dirname  + "/client/views" + "/about.html"));
 });
 
 // Store all HTML files in dist folder.
-app.use(express.static(__dirname + "/client/dist"));
-app.use(express.static(__dirname + "/client/dist"));
+app.use(express.static(__dirname + "/client/views"));
+app.use(express.static(__dirname + "/client/views"));
 
 // Add the router
 app.use("/", router);
